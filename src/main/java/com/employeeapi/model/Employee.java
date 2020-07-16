@@ -13,16 +13,16 @@ public class Employee {
 		private String JobTitle;
 		
 		public Employee() {
-			super();
+			
 		}
 
 		public Employee(Long id, String name, String surname, String jobTitle) {
-			super();
 			this.id = id;
 			this.name = name;
 			this.surname = surname;
-			JobTitle = jobTitle;
+			this.JobTitle = jobTitle;
 		}
+		
 
 		public Long getId() {
 			return id;
