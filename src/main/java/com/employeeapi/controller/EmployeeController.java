@@ -1,5 +1,6 @@
 package com.employeeapi.controller;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,12 +10,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
 import com.employeeapi.service.EmployeeServices;
 import com.employeeapi.model.Employee;
 
 
 @RestController
+@RequestMapping(path = "/employee")
 public class EmployeeController {
 	
 	@Autowired
@@ -39,8 +44,9 @@ public class EmployeeController {
 	@PostMapping("/createEmployee")
 	public ResponseEntity<Object> createEmployee(@RequestBody Employee employee) {
 		employeeServices.createEmployee(employee);
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(employee.getId()).toUri();
 		
-		return  ResponseEntity.noContent().build();
+		return  ResponseEntity.created(location).build();
 	}
 	
 	@PostMapping("/updateEmployee/{id}")
