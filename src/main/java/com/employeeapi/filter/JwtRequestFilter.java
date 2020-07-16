@@ -1,4 +1,4 @@
-package com.employeeapi.config;
+package com.employeeapi.filter;
 
 import java.io.IOException;
 import javax.servlet.FilterChain;
@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.employeeapi.service.JwtUserDetailsService;
+import com.employeeapi.util.JwtTokenUtil;
 
 import io.jsonwebtoken.ExpiredJwtException;
 

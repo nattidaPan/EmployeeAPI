@@ -1,4 +1,4 @@
-package com.employeeapi.config;
+package com.employeeapi.util;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -16,7 +16,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 public class JwtTokenUtil implements Serializable{
 
 	private static final long serialVersionUID = -2220326046582242692L;
-	
+	//5 hours
 	public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
 
 	@Value("${jwt.secret}")

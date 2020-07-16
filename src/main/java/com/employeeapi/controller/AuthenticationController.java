@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.employeeapi.config.JwtTokenUtil;
 import com.employeeapi.model.JwtRequest;
 import com.employeeapi.model.JwtResponse;
 import com.employeeapi.service.JwtUserDetailsService;
+import com.employeeapi.util.JwtTokenUtil;
 
 @RestController
 @CrossOrigin
