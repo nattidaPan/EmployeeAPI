@@ -27,7 +27,7 @@ public class EmployeeController {
 	private EmployeeServices employeeServices;
 
 	@GetMapping("/getEmployeesList")
-	public Employees retrieveAllEmployee() {
+	public Employees getEmployeesList() {
 		Employees response = new Employees();
 		List<Employee> list = new ArrayList<>();
 		list = employeeServices.retrieveAllEmployee();
@@ -36,7 +36,7 @@ public class EmployeeController {
 	}
 
 	@GetMapping("/getEmployeeById/{id}")
-	public Employee retrieveEmployee(@PathVariable long id) {
+	public Employee getEmployeeById(@PathVariable long id) {
 		Optional<Employee>  employee = employeeServices.retrieveEmployee(id);
 		return employee.get();
 	}
